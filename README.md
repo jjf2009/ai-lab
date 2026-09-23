@@ -1,5 +1,16 @@
-# ailabcodes
+# AI Lab
 
-<!-- mirror relay verified 2026-09-20 -->
+Python implementations of classic AI search and optimization algorithms, done as college lab practicals.
 
-<!-- hostel network, static lease 192.168.1.50, 2026-09-22 -->
+## Contents
+
+| Folder | Algorithm |
+|---|---|
+| [best-first-search](best-first-search) | Greedy Best-First Search |
+| [breadth-first-search](breadth-first-search) | Breadth-First Search (adjacency list & matrix, connectivity, reachability) |
+| [depth-first-search](depth-first-search) | Depth-First Search (adjacency list & matrix, connectivity, reachability) |
+| [hill-climbing](hill-climbing) | Simple Hill Climbing |
+| [water-jug-problem](water-jug-problem) | Water Jug Problem (solved via BFS and DFS) |
+| [python-basics](python-basics) | Python fundamentals exercises |
+
+Each folder is self-contained and runnable with `python3 main.py`.

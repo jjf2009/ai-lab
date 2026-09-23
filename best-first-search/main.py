@@ -6,26 +6,28 @@ def neighbours(graph, vertex):
 
 
 def best_first_search(graph, start, goal, heuristics):
-    visited = set()
-    heap = [(heuristics[start], start)]
-    order = []
+    open_list = [(heuristics[start], start)]  
+    closed_list = {}                         
+    closed_list[start] = None
 
-    while heap:
-        _, vertex = heappop(heap)
-
-        if vertex in visited:
-            continue
-        visited.add(vertex)
-        order.append(vertex)
+    while open_list:
+        h, vertex = heappop(open_list)
 
         if vertex == goal:
             break
 
         for neighbour in neighbours(graph, vertex):
-            if neighbour not in visited:
-                heappush(heap, (heuristics[neighbour], neighbour))
+            if neighbour not in closed_list:
+                closed_list[neighbour] = vertex
+                heappush(open_list, (heuristics[neighbour], neighbour))
 
-    return order
+    path = []
+    node = goal
+    while node is not None:
+        path.append(node)
+        node = closed_list.get(node)
+    path.reverse()
+    return path
 
 
 if __name__ == "__main__":
